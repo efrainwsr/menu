@@ -6,12 +6,25 @@
 
   const bcvPrice = ref(0);
   const menu = ref(0);
+  const total = ref (0)
+  const totalBs = ref (0)
   
    const obtenerBcv = onMounted( async ()=>{
    const { data } = await axios.get(url);
    console.log(data);
    bcvPrice.value = data.usd;
   })
+
+  const sumarAlTotal = (precio) => {
+    total.value += precio;
+    let precioBs = precio*bcvPrice.value;
+    totalBs.value += precioBs; 
+  };
+
+  const borrarCuenta = () =>{
+    total.value=0;
+    totalBs.value=0;
+  };
 
    const getMenu = onMounted( async ()=>{
     const { data } = await axios.get(urlMenu);
@@ -43,12 +56,16 @@
 <body>
     <section id="menu">
         <h2>Menú</h2>
+        <h3>TOTAL EN DOLARES: {{ total }}</h3>
+        <h3>TOTAL EN BS: {{ totalBs.toFixed(2) }}</h3>
+        <button @click="borrarCuenta">BORRAR</button>
         <table>
             <thead>
                 <tr>
                     <th>Plato</th>
                     <th>Precio</th>
                     <th>Bs</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -62,10 +79,14 @@
                     <td class="alinear-derecha">
                         <span>{{(item.precio * bcvPrice).toFixed(2)}} Bs.</span>
                     </td>
+                    <td class="alinear-derecha">
+                        <button @click="sumarAlTotal(item.precio)"> + </button>
+                    </td>
                 </tr>
             </tbody>
         </table>
         <h2 class="bcvPrice">{{bcvPrice}} Bs.</h2>
+        
     </section>
 </body>
 </html>
@@ -105,8 +126,9 @@ table {
        }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #222222;
             text-align: center;
+            color: #fff;
         }
 
 .bcvPrice {
