@@ -16,37 +16,38 @@ export default defineConfig({
       manifest: {
         "name": "Menu",
         "short_name": "Menu",
+        "start_url": "https://www.menu-sable-nine.vercel.app/",
         "display": "standalone",
         "background_color": "#ffffff",
         "theme_color": "#000000",
         "icons": [
           {
-            "src": "https://menu-sable-nine.vercel.app/public/32.png",
+            "src": "https://www.menu-sable-nine.vercel.app/public/32.png",
             "sizes": "32x32",
             "type": "image/png"
           },
           {
-            "src": "https://menu-sable-nine.vercel.app/public/64.png",
+            "src": "https://www.menu-sable-nine.vercel.app/public/64.png",
             "sizes": "64x64",
             "type": "image/png"
           },
           {
-            "src": "https://menu-sable-nine.vercel.app/public/72.png",
+            "src": "https://www.menu-sable-nine.vercel.app/public/72.png",
             "sizes": "72x72",
             "type": "image/png"
           },
           {
-            "src": "https://menu-sable-nine.vercel.app/public/96.png",
+            "src": "https://www.menu-sable-nine.vercel.app/public/96.png",
             "sizes": "96x96",
             "type": "image/png"
           },
           {
-            "src": "https://menu-sable-nine.vercel.app/public/128.png",
+            "src": "https://www.menu-sable-nine.vercel.app/public/128.png",
             "sizes": "128x128",
             "type": "image/png"
           },
           {
-            "src": "https://menu-sable-nine.vercel.app/public/144.png",
+            "src": "https://www.menu-sable-nine.vercel.app/public/144.png",
             "sizes": "144x144",
             "type": "image/png"
           },
@@ -66,12 +67,12 @@ export default defineConfig({
             "type": "image/png"
           },
           {
-            "src": "https://menu-sable-nine.vercel.app/public/384.png",
+            "src": "https://www.menu-sable-nine.vercel.app/public/384.png",
             "sizes": "384x384",
             "type": "image/png"
           },
           {
-            "src": "https://menu-sable-nine.vercel.app/public/512.png",
+            "src": "https://www.menu-sable-nine.vercel.app/public/512.png",
             "sizes": "512x512",
             "type": "image/png"
           }
