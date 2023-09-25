@@ -11,7 +11,7 @@
   
    const obtenerBcv = onMounted( async ()=>{
    const { data } = await axios.get(url);
-   bcvPrice.value = data.usd;
+   bcvPrice.value = data;
   })
 
   const sumarAlTotal = (precio,precioBs) => {
