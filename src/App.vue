@@ -11,13 +11,11 @@
   
    const obtenerBcv = onMounted( async ()=>{
    const { data } = await axios.get(url);
-   console.log(data);
    bcvPrice.value = data.usd;
   })
 
-  const sumarAlTotal = (precio) => {
+  const sumarAlTotal = (precio,precioBs) => {
     total.value += precio;
-    let precioBs = precio*bcvPrice.value;
     totalBs.value += precioBs; 
   };
 
@@ -29,13 +27,6 @@
    const getMenu = onMounted( async ()=>{
     const { data } = await axios.get(urlMenu);
     menu.value = data;
-    console.log(data)
-
-  /*  menu.value.forEach((item) => {
-      let aux = bcvPrice.value(item.precio);
-      item.bs = aux.toFixed(2)
-    });*/
-
    })
 
 
@@ -77,10 +68,10 @@
                         <span>{{item.precio}} $</span>
                     </td>
                     <td class="alinear-derecha">
-                        <span>{{(item.precio * bcvPrice).toFixed(2)}} Bs.</span>
+                        <span>{{item.precioBs}} Bs.</span>
                     </td>
                     <td class="alinear-derecha">
-                        <button @click="sumarAlTotal(item.precio)"> + </button>
+                        <button @click="sumarAlTotal(item.precio,item.precioBs)"> + </button>
                     </td>
                 </tr>
             </tbody>
