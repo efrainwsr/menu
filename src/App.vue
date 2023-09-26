@@ -1,8 +1,8 @@
 <script setup>
   import { ref, onMounted,computed } from 'vue'
   import axios from 'axios'
-  const url = 'https://bcv-apiv2.vercel.app/bcv';
-  const urlMenu = 'https://bcv-apiv2.vercel.app/menu';
+  const url = 'https://bcv-api-vnzw.onrender.com/bcv';
+  const urlMenu = 'https://bcv-api-vnzw.onrender.com/menu';
 
   const bcvPrice = ref(0);
   const menu = ref(0);
