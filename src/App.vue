@@ -19,6 +19,11 @@
     totalBs.value += precioBs; 
   };
 
+  const restarAlTotal = (precio,precioBs) => {
+    total.value -= precio;
+    totalBs.value -= precioBs; 
+  };
+
   const borrarCuenta = () =>{
     total.value=0;
     totalBs.value=0;
@@ -57,6 +62,7 @@
                     <th>Precio</th>
                     <th>Bs</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -72,6 +78,9 @@
                     </td>
                     <td class="alinear-derecha">
                         <button @click="sumarAlTotal(item.precio,item.precioBs)"> + </button>
+                    </td>
+                    <td class="alinear-derecha">
+                        <button @click="restarAlTotal(item.precio,item.precioBs)"> - </button>
                     </td>
                 </tr>
             </tbody>
